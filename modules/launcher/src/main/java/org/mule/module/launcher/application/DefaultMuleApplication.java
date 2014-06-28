@@ -13,6 +13,7 @@ import org.mule.api.MuleException;
 import org.mule.api.config.ConfigurationBuilder;
 import org.mule.api.config.MuleProperties;
 import org.mule.api.lifecycle.Stoppable;
+import org.mule.config.builders.ExtensionsManagerConfigurationBuilder;
 import org.mule.config.builders.SimpleConfigurationBuilder;
 import org.mule.config.i18n.CoreMessages;
 import org.mule.config.i18n.MessageFactory;
@@ -34,7 +35,7 @@ import org.mule.util.ClassUtils;
 import org.mule.util.ExceptionUtils;
 
 import java.io.File;
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -157,8 +158,9 @@ public class DefaultMuleApplication implements Application
             ConfigurationBuilder cfgBuilder = domain.createApplicationConfigurationBuilder(this);
             if (!cfgBuilder.isConfigured())
             {
-                List<ConfigurationBuilder> builders = new ArrayList<ConfigurationBuilder>(3);
+                List<ConfigurationBuilder> builders = new LinkedList<>();
                 builders.add(createConfigurationBuilderFromApplicationProperties());
+                builders.add(createApplicationLevelExtensionManagerBuilder());
 
                 // We need to add this builder before spring so that we can use Mule annotations in Spring or any other builder
                 addAnnotationsConfigBuilderIfPresent(builders);
@@ -170,6 +172,7 @@ public class DefaultMuleApplication implements Application
                 {
                     muleContextFactory.addListener(new MuleContextDeploymentListener(getArtifactName(), deploymentListener));
                 }
+
                 ApplicationMuleContextBuilder applicationContextBuilder = new ApplicationMuleContextBuilder(descriptor);
                 this.muleContext = muleContextFactory.createMuleContext(builders, applicationContextBuilder);
             }
@@ -194,6 +197,11 @@ public class DefaultMuleApplication implements Application
         appProperties.put(MuleProperties.APP_NAME_PROPERTY, getArtifactName());
 
         return new SimpleConfigurationBuilder(appProperties);
+    }
+
+    private ConfigurationBuilder createApplicationLevelExtensionManagerBuilder()
+    {
+        return new ExtensionsManagerConfigurationBuilder();
     }
 
     protected void addAnnotationsConfigBuilderIfPresent(List<ConfigurationBuilder> builders) throws Exception
