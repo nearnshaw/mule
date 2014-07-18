@@ -29,8 +29,8 @@ In this guide you will find:
 # Before you begin 
 Mule is a powerful and complex project. Before contributing to the Mule source code, it's important to understand the domain of the enterprose integration, Mule ESB from the user point of view and the different mechanisms to extend Mule.
 
-## Getting to know better Mule
-There are a number of sources you can use to understand better Mule and its forthcoming features:
+## Getting to know Mule better
+There are a number of sources you can use to understand Mule better and its forthcoming features:
 
 - MuleSoft's [blog](http://blogs.mulesoft.org/). The fastest way of knowing about new features in mule. 
 - [@MuleSoft](https://twitter.com/MuleSoft)'s twitter account. You might also want to check the [#MuleESB](https://twitter.com/hashtag/MuleESB) hashtag.
@@ -40,35 +40,35 @@ There are a number of sources you can use to understand better Mule and its fort
 
 ## Visiting the community meeting points
 
-If you are here reading this document, you probably have already in mind a new feature or a bug fix to work on. This is great, however there could be other members of the communiry with the same idea.  
+If you are here reading this document, you probably have a new feature or a bug fix already in mind that you would like to work on. This is great, however there could be other members of the communiry with the same idea.  
 
-Before you begin, please take a few minutes to review community meeting points to make sure someone else hasn't already taken on your challenge:
+Before you begin, please take a few minutes to review community meeting points to make sure someone else hasn't already taken on your same challenge:
 
 1. Review [existing JIRAs](http://www.mulesoft.org/jira/browse/MULE) to see if a bug has already been logged.
 2. Follow the [Mule forum](http://forum.mulesoft.org/mulesoft) chatter to see if anyone else has begun to resolve the problem or initiate the improvement.
-3. Scan [StackOverflow](http://stackoverflow.com/questions/tagged/mule) to see if there is already a proposed solution for your problem. 
-If, in the above-listed resources, no-one else has initiated your improvement or fix, log the issue by creating a [Mule JIRA](http://www.mulesoft.org/jira/browse/MULE).  JIRA issues a identifier for your issue; keep this handy as you will use it to create a branch later if you decide to fix it yourself.
+3. Scan [StackOverflow](http://stackoverflow.com/questions/tagged/mule) to see if there already is a proposed solution for your problem. 
+If, in the above-listed resources, no-one else has initiated your improvement or fix, log the issue by creating a [Mule JIRA](http://www.mulesoft.org/jira/browse/MULE).  JIRA issues an identifier for your issue; keep this handy as you will use it to create a branch later if you decide to fix it yourself.
 
 ## Understanding the extension mechanisms
 
 Mule ESB has two different extension mechanisms for writting modules and connectors. Avoiding to add functionality to this project and rather use one of those mechanisms to extend Mule is probably the more favorable option.
 
-It is therefor important to understand those two extension mechanisms. The first and more intuitive mechanism for extensions is the [Anypoint Connector DevKit](http://www.mulesoft.org/documentation/display/current/Anypoint+Connector+DevKit), an annotation based framework for easy construction of extesions. The second choice is to extend mule through the [Extensions](http://www.mulesoft.org/documentation/display/current/Extending) mechanism.
+It is therefore important to understand those two extension mechanisms. The first and more intuitive mechanism for extensions is the [Anypoint Connector DevKit](http://www.mulesoft.org/documentation/display/current/Anypoint+Connector+DevKit), an annotation based framework for easy construction of extesions. The second choice is to extend mule through the [Extensions](http://www.mulesoft.org/documentation/display/current/Extending) mechanism.
 
-Now we should undestand Mule and the enterprise integration domain. At the same time we should  know the different extension mechanisms of Mule.
+By this point you should be familiar with Mule and the enterprise integration domain, as well as the different extension mechanisms of Mule.
 
  
 # Setting up the development environment
 
-While getting ready to contribute to any piece of software we will need to install number of prerequisites, we will need also to obtain the preexisting source code there could be. In this section we will follow some installation steps for the prerequisites and also we will download the source code.
+While getting ready to contribute to any piece of software, you will need to install a number of prerequisites, you will need also to obtain the preexisting source code. In this section we will follow some installation steps for the prerequisites, we will also download the source code.
 
 ## Installing Prerequisites
 
-Before you get started, you need to set yourself up with an environment in which to develop Mule.  Your dev environment needs three things: a Java SDK, a recent version of Maven, an integration development environment (IDE), and new branch of code to work on.
+Before you get started, you need to set yourself up with an environment in which to develop Mule.  Your dev environment needs three things: a Java SDK, a recent version of Maven, an integration development environment (IDE), and a new branch of code to work on.
 
 ### JDK
 
-1. If you are working with **Windows** or **Linux**, install one of the following [Java Development Kits](http://www.oracle.com/technetwork/java/javase/downloads/index.html) on your local drive. If you are working on a **Mac**, simply confirm that the JDK shipped with your Mac OS X the following is *Java SE Development Kit 7 (also known as Java SE 7u13)* or newer using the command `java -version`, then skip to step 4 below: 
+1. If you are working with **Windows** or **Linux**, install one of the following [Java Development Kits](http://www.oracle.com/technetwork/java/javase/downloads/index.html) on your local drive. If you are working on a **Mac**, simply confirm that the JDK shipped with your Mac OS X is the following *Java SE Development Kit 7 (also known as Java SE 7u13)* or newer, You can check this by using the command `java -version` (if you do have it, skip to step 4 below)
 2. Create an environment variable called `JAVA_HOME`, setting it to the directory in which you installed the JDK. 
 3. Update the PATH environment variable so that it includes the path to JDK binaries. Add the following line to the PATH variable:
     - Windows: `%JAVA_HOME%/bin`
