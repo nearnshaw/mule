@@ -303,7 +303,7 @@ Ready to submit your patch for review and merging? Initiate a pull request in gi
 
 # Summary
 
-This guide started with pointing to different [sources of information](#getting-to-know-better-mule)  around Mule and the Mule's [community meeting points](#visiting-the-community-meeting-points) on the net. These were useful to understand were Mule is moving to and to have contact mechanisms with the rest of the community for help or discussion.  
+This guide started with pointing to different [sources of information](#getting-to-know-better-mule) around Mule and the Mule's [community meeting points](#visiting-the-community-meeting-points) on the net. These are useful to understand were Mule is moving to and to have contact mechanisms with the rest of the community for help or discussion.  
   
 In order to set up our [development environment](#setting-up-the-development-environment) we got to [install some prerequisites](#installing-prerequisites). Once we had them ready, we  downloaded the [source code](#getting-the-source-code).
 
@@ -311,5 +311,5 @@ At that point we were almost ready to develop improvements, we just needed to [c
 
 Then we were finally ready to [develop our contribution](#developing-your-contribution). We created our very own [feature branch](#creating-your-topic-branch) were we'll develop our improvement, then we learnt how to [keep it updated](#updating-your-topic-branch) in order to be able to submit a [pull request](#submitting-a-pull-request) to the main Mule ESB repository
 
-Thank you one more time for taking some time understanding how to contribute to Mule ESB.
+Thank you one more time for taking some time to understand how to contribute to Mule ESB.
 
